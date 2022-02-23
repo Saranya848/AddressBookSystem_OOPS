@@ -83,26 +83,25 @@ class PersonContact {
 	}
 }
 
-
 class Editdetails {
 
 	public void editdata() {
-	    // Creating an empty HashMap
-	    HashMap<Integer, String> hash_map = new HashMap<Integer, String>();
-	 
-	    // Mapping string values to int keys
-	    hash_map.put(1, "Harsha");
-	    // Displaying the HashMap
-	    System.out.println("Initial Mappings are: " + hash_map);
-	 
-	    // Removing the existing key mapping
-	    String returned_value = (String)hash_map.remove(1);
-	 
-	    // Verifying the returned value
-	    System.out.println("Returned value is: "+ returned_value);
-	    
-	    // Displaying the new map
-	    System.out.println("New map is: "+ hash_map);
+		// Creating an empty HashMap
+		HashMap<Integer, String> hash_map = new HashMap<Integer, String>();
+
+		// Mapping string values to int keys
+		hash_map.put(1, "Harsha");
+		// Displaying the HashMap
+		System.out.println("Initial Mappings are: " + hash_map);
+
+		// Removing the existing key mapping
+		String returned_value = (String) hash_map.remove(1);
+
+		// Verifying the returned value
+		System.out.println("Returned value is: " + returned_value);
+
+		// Displaying the new map
+		System.out.println("New map is: " + hash_map);
 	}
 }
 
@@ -122,7 +121,6 @@ public class AddressBookMain {
 		pc.setPhoneNumber("9703170708 \n");
 		pc.setGmail("Sriharsha@gmail.com\n");
 		System.out.println("The Person Details are \n" + pc);
-
 
 		// calling edit method
 		Editdetails ed = new Editdetails();
