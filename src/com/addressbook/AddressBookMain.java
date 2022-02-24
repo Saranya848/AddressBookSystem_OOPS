@@ -83,49 +83,71 @@ class PersonContact {
 	}
 }
 
+class NewPerson {
+	Scanner sc = new Scanner(System.in);
 
-class Editdetails {
+	public void newcontact() {
+		PersonContact pc1 = new PersonContact();
+		System.out.println("Enter First Name: ");
+		String firstname = sc.nextLine();
 
-	public void editdata() {
-	    // Creating an empty HashMap
-	    HashMap<Integer, String> hash_map = new HashMap<Integer, String>();
-	 
-	    // Mapping string values to int keys
-	    hash_map.put(1, "Harsha");
-	    // Displaying the HashMap
-	    System.out.println("Initial Mappings are: " + hash_map);
-	 
-	    // Removing the existing key mapping
-	    String returned_value = (String)hash_map.remove(1);
-	 
-	    // Verifying the returned value
-	    System.out.println("Returned value is: "+ returned_value);
-	    
-	    // Displaying the new map
-	    System.out.println("New map is: "+ hash_map);
+		System.out.println("Enter last Name: ");
+		String lastname = sc.nextLine();
+
+		System.out.println("Enter your address: ");
+		String address = sc.nextLine();
+
+		System.out.println("Enter your City: ");
+		String city = sc.nextLine();
+
+		System.out.println("Enter your state: ");
+		String state = sc.nextLine();
+
+		System.out.println("Enter zip code : ");
+		Long zip = sc.nextLong();
+
+		System.out.println("Enter phone number: ");
+		String phoneno = sc.nextLine();
+
+		System.out.println("Enter your EMail ID: ");
+		String email = sc.nextLine();
+
+		pc1.setFirstName(firstname);
+
+		pc1.setLastName(lastname);
+
+		pc1.setAddress(address);
+
+		pc1.setCity(city);
+
+		pc1.setState(state);
+
+		pc1.setPincode(zip.intValue());
+
+		pc1.setPhoneNumber(phoneno);
+
+		pc1.setGmail(email);
+
+		System.out.println("The Contact Details of " + firstname + "\n" + pc1);
+	}
+
+	public void editContact() {
+		PersonContact pc1 = new PersonContact();
+		System.out.println("Enter the firstName of person");
+		String editName = sc.nextLine();
+		if (editName.equalsIgnoreCase(pc1.getFirstName()))
+			newcontact();
+		else
+			System.out.println("The Entered First Name Is Not Match");
+		editContact();
 	}
 }
 
 public class AddressBookMain {
 
 	public static void main(String[] args) {
-
-		PersonContact pc = new PersonContact();
-
-		// calling set methods
-		pc.setFirstName("Harsha \n");
-		pc.setLastName("Siripurapu \n");
-		pc.setAddress("Madhurawada\n");
-		pc.setCity("Vizag\n");
-		pc.setState("Andhra Pradesh \n");
-		pc.setPincode(530048);
-		pc.setPhoneNumber("9703170708 \n");
-		pc.setGmail("Sriharsha@gmail.com\n");
-		System.out.println("The Person Details are \n" + pc);
-
-
-		// calling edit method
-		Editdetails ed = new Editdetails();
-		ed.editdata();
+		NewPerson np = new NewPerson();
+		np.newcontact();
 	}
+
 }
